@@ -31,9 +31,7 @@ export default function ContactList() {
 
     if (contacts.length === 0) {
    return <Notification />
-  } {
-    
-  }
+  } 
 
   const elements = contact.map(({ name, number, id }) => {
     return (

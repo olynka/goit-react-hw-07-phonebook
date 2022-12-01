@@ -6,6 +6,9 @@ import { changeFilter} from 'redux/contacts/filter/filterSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import Notification from 'components/Utils/Notification';
 import { getFilter } from 'redux/contacts/filter/selectorF';
+import Loader from 'components/Utils/Loader'
+import { getIsLoading,getError } from 'redux/contacts/filter/selectorF';
+
 
 
 const filterInputId = nanoid(4);
@@ -14,6 +17,8 @@ const filterInputId = nanoid(4);
 export default function Filter({ value, onChange }) {
   const dispatch = useDispatch();
   const contacts = useSelector(getFilter);
+    const isLoading = useSelector(getIsLoading);
+  const isError = useSelector(getError);
   
       const onChangeFilter = (e) => {
     dispatch(changeFilter(e.currentTarget.value));
@@ -34,7 +39,8 @@ export default function Filter({ value, onChange }) {
                     value={value}
                     onChange={onChangeFilter}
                 />
-            </Label>
+        </Label>
+          {isLoading && !isError && <Loader/>}
         </Forms>
     );
 }
