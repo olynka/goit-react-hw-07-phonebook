@@ -4,12 +4,12 @@ import { useState } from "react";
 import { Label, Button, Input, Form } from "./FormStyled";
 import { useSelector, useDispatch } from 'react-redux';
 import * as contactsOperations from "redux/contacts/contactsOperations";
-import getFilterContacts from "redux/contacts/filter";
+import { getFilter } from "redux/contacts/filter/filterSlice";
 
 
 
 export default function ContactForm() {
-  const filterContact=useSelector(getFilterContacts)
+  const filterContact=useSelector(getFilter)
   const dispatch = useDispatch();
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');

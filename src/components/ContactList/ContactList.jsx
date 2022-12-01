@@ -6,6 +6,8 @@ import *as contactsOperations from "redux/contacts/contactsOperations"
 import { useEffect } from "react";
 import { getContacts } from "redux/contacts/contacts-slice";
 import { getFilter } from "redux/contacts/filter/filterSlice";
+import Notification from "components/Utils/Notification";
+
 
 
 export default function ContactList() {
@@ -21,11 +23,18 @@ export default function ContactList() {
   }
   const contact = getVisibleContacts();
 
+  
+
  useEffect(() => {
     dispatch(contactsOperations.fetchContacts());
   }, [dispatch]);
 
-  
+    if (contacts.length === 0) {
+   return <Notification />
+  } {
+    
+  }
+
   const elements = contact.map(({ name, number, id }) => {
     return (
       <List key={id}>
