@@ -1,16 +1,26 @@
+import ContactList from './ContactList/ContactList';
+
+import ContactForm from './Form/Form';
+import Filter from './filter/filter';
+import { Block, Totle } from './AppStyled';
+
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
-  );
+  <>
+      <Block>
+        <Totle>Phonebook</Totle>
+        <ContactForm  />
+        <Filter />
+    
+      <ContactList/>
+      
+</Block>
+     </>
+  )
 };
+
+
+
+
+
