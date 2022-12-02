@@ -2,7 +2,7 @@
 import PropTypes from 'prop-types';
 import { nanoid } from "nanoid";
 import { Forms, Label, Input } from './filterStyled';
-import { changeFilter} from 'redux/contacts/filter/filterSlice';
+import { changeFilter} from 'redux/filter/filterSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import Notification from 'components/Utils/Notification';
 import { getFilter } from 'redux/contacts/selectors';
@@ -21,7 +21,9 @@ export default function Filter({ value, onChange }) {
   const isError = useSelector(getError);
   
       const onChangeFilter = (e) => {
-    dispatch(changeFilter(e.currentTarget.value));
+        dispatch(changeFilter(e.currentTarget.value));
+        
+        
   }
   if (contacts.length === 0) {
    return <Notification />
