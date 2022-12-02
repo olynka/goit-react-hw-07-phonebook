@@ -52,7 +52,7 @@ export const counterSlice = createSlice({
             
     }
 });
-export const getContacts = state => state.contacts.items;
+
 
 
 

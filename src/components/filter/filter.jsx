@@ -5,9 +5,9 @@ import { Forms, Label, Input } from './filterStyled';
 import { changeFilter} from 'redux/contacts/filter/filterSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import Notification from 'components/Utils/Notification';
-import { getFilter } from 'redux/contacts/filter/selectorF';
+import { getFilter } from 'redux/contacts/selectors';
 import Loader from 'components/Utils/Loader'
-import { getIsLoading,getError } from 'redux/contacts/filter/selectorF';
+import { getIsLoading,getError } from 'redux/contacts/selectors';
 
 
 

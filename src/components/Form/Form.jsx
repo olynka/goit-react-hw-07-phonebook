@@ -4,9 +4,10 @@ import { useState } from "react";
 import { Label, Button, Input, Form } from "./FormStyled";
 import { useSelector, useDispatch } from 'react-redux';
 import * as contactsOperations from "redux/contacts/contactsOperations";
-import { getContacts } from "redux/contacts/filter/selectorF";
+import { getContacts } from "redux/contacts/selectors";
 
-
+const nameInputId = nanoid();
+  const numberInputId = nanoid();
 
 export default function ContactForm() {
   const filterContact=useSelector(getContacts)
@@ -15,8 +16,7 @@ export default function ContactForm() {
   const [number, setNumber] = useState('');
 
 
-  const nameInputId = nanoid();
-  const numberInputId = nanoid();
+  
 
   const handleInputChange = e => {
     const { name, value } = e.target;

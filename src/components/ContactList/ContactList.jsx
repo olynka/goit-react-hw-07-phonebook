@@ -4,8 +4,8 @@ import { Button, List, P } from "./ConstListStyled";
 import { removeContacts } from "redux/contacts/contactsOperations";
 import *as contactsOperations from "redux/contacts/contactsOperations"
 import { useEffect } from "react";
-import { getContacts } from "redux/contacts/contacts-slice";
-import { getFilter } from "redux/contacts/filter/filterSlice";
+import { getContacts } from "redux/contacts/selectors";
+import { getFilter } from "redux/contacts/filter/filterSelector";
 import Notification from "components/Utils/Notification";
 
 
