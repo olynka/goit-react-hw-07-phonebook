@@ -5,7 +5,7 @@ import { removeContacts } from "redux/contacts/contactsOperations";
 import *as contactsOperations from "redux/contacts/contactsOperations"
 import { useEffect } from "react";
 import { getContacts } from "redux/contacts/selectors";
-import { getFilter } from "redux/filter/filterSelector";
+import { getFilter } from "redux/contacts/selectors";
 import Notification from "components/Utils/Notification";
 
 
